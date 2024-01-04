@@ -99,4 +99,9 @@ $executables = @(
     "sfc.exe"
     )
 $result = Get-WfpFilterData -executables $executables
-$result
+if ($result) {
+    $result
+}
+else {
+    Write-Output "No blocked executables from the list"
+}
