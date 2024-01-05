@@ -1,7 +1,7 @@
 # EDRNoiseMaker
 Detect WFP filters blocking EDR communications
 
-The aim of this tool is to detect potential silencers of an EDR (or the process you choose). Based on the attack against EDR developed by [EDRSilencer](https://github.com/netero1010/EDRSilencer) and [FireBlock](https://www.mdsec.co.uk/2023/09/nighthawk-0-2-6-three-wise-monkeys/), `EDRNoiseMaker` trys to detect them by checking a list of exeutables that have been *silenced* using the Windows Filtering Platform (WFP).
+The aim of this tool is to detect potential silencers of an EDR (or the process you choose). Based on the attack against EDR developed by [EDRSilencer](https://github.com/netero1010/EDRSilencer) and [FireBlock](https://www.mdsec.co.uk/2023/09/nighthawk-0-2-6-three-wise-monkeys/), `EDRNoiseMaker` trys to detect them by checking a list of executables that have been *silenced* using the Windows Filtering Platform (WFP).
 
 ## WFP
 The Windows Filtering Platform (WFP) is a set of application programming interfaces (APIs) and system services provided by Microsoft in Windows operating systems. It is a comprehensive networking platform that allows developers to implement custom network security solutions, packet filtering, and network monitoring applications.
@@ -15,10 +15,9 @@ With the help of `NtObjectManager` we will be able to list all filters and the a
 - Listed filters that block connections
 - Filter that list by the executables provided
 
-The actual exeutable list is based on the list provided by [EDRSilencer](https://github.com/netero1010/EDRSilencer):
+The actual executable list is based on the list provided by [EDRSilencer](https://github.com/netero1010/EDRSilencer):
 ```
-"MsMpEng.exe", "MsSense.exe", "SenseIR.exe", "SenseNdr.exe", "SenseCncProxy.exe", "SenseSampleUploader.exe", "elastic-agent.exe","elastic-endpoint.exe", "filebeat.exe", "xagt.exe", "QualysAgent.exe", "SentinelAgent.exe", "SentinelAgentWorker.exe",
-"SentinelServiceHost.exe","SentinelStaticEngine.exe",  "LogProcessorService.exe","SentinelStaticEngineScanner.exe","SentinelHelperService.exe","SentinelBrowserNativeHost.exe","CylanceSvc.exe","AmSvc.exe","CrAmTray.exe","CrsSvc.exe","ExecutionPreventionSvc.exe","CybereasonAV.exe","cb.exe","RepMgr.exe","RepUtils.exe","RepUx.exe","RepWAV.exe","RepWSC.exe","TaniumClient.exe","TaniumCX.exe","TaniumDetectEngine.exe","Traps.exe","cyserver.exe","CyveraService.exe","CyvrFsFlt.exe","fortiedr.exe","sfc.exe"
+"MsMpEng.exe","MsSense.exe","SenseIR.exe","SenseNdr.exe","SenseCncProxy.exe","SenseSampleUploader.exe","elastic-agent.exe","elastic-endpoint.exe","filebeat.exe","xagt.exe","QualysAgent.exe","SentinelAgent.exe", "SentinelAgentWorker.exe","SentinelServiceHost.exe","SentinelStaticEngine.exe",  "LogProcessorService.exe","SentinelStaticEngineScanner.exe","SentinelHelperService.exe","SentinelBrowserNativeHost.exe","CylanceSvc.exe","AmSvc.exe","CrAmTray.exe","CrsSvc.exe","ExecutionPreventionSvc.exe","CybereasonAV.exe","cb.exe","RepMgr.exe","RepUtils.exe","RepUx.exe","RepWAV.exe","RepWSC.exe","TaniumClient.exe","TaniumCX.exe","TaniumDetectEngine.exe","Traps.exe","cyserver.exe","CyveraService.exe","CyvrFsFlt.exe","fortiedr.exe","sfc.exe"
 ```
 Add executables as you need.
 
